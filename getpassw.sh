@@ -4,7 +4,13 @@
 # It ensures that only supported keys, as defined in the config.sh file, are read and loaded.
 # One of the use cases is to load API keys for large language models (LLMs).
 
-SCRIPT_DIR=$(dirname "$(realpath "$0")")
+if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+  # Script is being sourced
+  SCRIPT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+else
+  # Script is being executed
+  SCRIPT_DIR=$(dirname "$(realpath "$0")")
+fi
 source "$SCRIPT_DIR/config.sh"
 
 # Function to retrieve an API key from the macOS keychain
