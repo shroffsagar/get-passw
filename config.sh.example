@@ -1,0 +1,2 @@
+# List of supported API keys
+SUPPORTED_KEYS=("key1" "key2")
