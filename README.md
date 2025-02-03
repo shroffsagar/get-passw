@@ -34,8 +34,8 @@ cp config.sh.example config.sh
 ```bash
 # Array of allowed passphrase keys
 ALLOWED_KEYS=(
-    "key1"
-    "key2"
+    "chat.gpt.key"
+    "anthropic.key"
     "development.database"
     "production.api"
 )
